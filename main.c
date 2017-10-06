@@ -22,15 +22,15 @@ int main() {
   printf("\n\n## TEST 2: VAR 3 INTO VAR 2 [n = 12] ##\n");
   printf("The default strncpy says: %s. My strlen says: %s\n\n", strncpy(T2, T3, 12), cpy_strn(T2, T3, 12));
 
-  T1[20] = "hello";
-  T2[20]  = "waffle";
-  T3[20]= "wooiekazooie";
+  char T1b[20] = "hello";
+  char T2b[20] = "waffle";
+  char T3b[20] = "wooiekazooie";
 
   printf("## TEST 1 ##\n");
-  printf("The default strncat says: %s. My strncat says: %s", strncat(T1, T2, 6), cat_strn(T1, T2, 6));
+  printf("The default strncat says: %s. My strncat says: %s", strncat(T1b, T2b, 6), cat_strn(T1b, T2b, 6));
 
   printf("\n\n## TEST 2 ##\n");
-  printf("The default strncat says: %s. My strncat says: %s\n", strncat(T2, T3, 12), cat_strn(T2, T3, 12));
+  printf("The default strncat says: %s. My strncat says: %s\n", strncat(T2b, T3b, 12), cat_strn(T2b, T3b, 12));
 
   printf("*************************************************************** TESTING STRLN ***************************************************\n\n");
   printf("Three test cases: 'hello', 'waffle' and ''\n");
@@ -61,6 +61,7 @@ int main() {
   test_cmp_str( T3j, T1j );
   test_cmp_str( T3j, T2j );
   test_cmp_str( T3j, T4j );
+  test_cmp_str( T3j, T3j );
 
 
   printf("\n------------------------------TESTING STRCHR-------------------------------\n \n");

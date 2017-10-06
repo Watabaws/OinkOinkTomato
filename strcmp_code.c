@@ -6,7 +6,7 @@
 int cmp_str( char * s, char * t ) {
   int ctr = 0;
   while ( *(s + ctr) ) {
-    if ( *(t + ctr) == 0 ) {
+    if ( !*(t + ctr) ) {
       return 1;
     }
     else if ( *(s + ctr) > *(t + ctr) ) {
@@ -19,6 +19,11 @@ int cmp_str( char * s, char * t ) {
       ctr++;
     }
   }
+  if ( !*(s + ctr) &&
+       !*(t + ctr) ) {
+    return 0;
+  }
+  
   return -1;
 }
 
